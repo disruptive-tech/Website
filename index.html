@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>UNLEASH YOUR TALENT</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+      <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' />
+      <link rel="stylesheet" href="css/main.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+     <div class='body'>
+      <header>
+         <nav class="navbar navbar-default">
+            <div class="container">
+               <!-- Brand and toggle get grouped for better mobile display -->
+               <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                     aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="index.html">UNLEASH YOUR TALENT</a>
+               </div>
+               <!-- Collect the nav links, forms, and other content for toggling -->
+               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-fixed navbar-right">
+                     
+                     <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi, User <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                           <li><a href="#">Action</a></li>
+                           <li><a href="#">Another action</a></li>
+                           <li><a href="#">Something else here</a></li>
+                           <li role="separator" class="divider"></li>
+                           <li><a href="#">Separated link</a></li>
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+               <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+         </nav>
+      </header>
+      <div class="container-fluid body-container">
+         <div id="wrapper">
+            <div class="row">
+               <div class="col-md-3 col-md-offset-6">
+                   
+       <div class="input-group">
+      <input type="text" id="search-artist" class="form-control" placeholder="Search for a track">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" onClick="searchartist()"><i class="fa fa-search"></i></button>
+      </span>
+    </div><!-- /input-group -->
+
+    </div>
+               </div>
+            </div>
+            <hr />
+            <div class="row" id='gallery'>
+               <div class="col-md-3"><img src='https://thetechmap.com/uploads/Logo_36034.jpg' />
+               </div>
+               <div class="col-md-3"><img src='https://thetechmap.com/uploads/Logo_36034.jpg' /></div>
+               <div class="col-md-3"><img src='https://thetechmap.com/uploads/Logo_36034.jpg' /></div>
+               <div class="col-md-3"><img src='https://thetechmap.com/uploads/Logo_36034.jpg' /></div>
+            </div>
+         </div>
+         <footer>
+            <p>&copy; 2017 Anoop Marpadga.</p>
+         </footer>
+      </div>
+      </div>
+      <div id='overlay'>
+        <div class="container">
+          <div class="row">
+          <span id='close-overlay' class='pull-right'>X</span>
+        </div>
+<div id="load-selected-track"></div>
+        </div>
+      </div>
+   </body>
+</html>
