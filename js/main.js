@@ -44,7 +44,7 @@ var playTrack = function(track){
      <div class='col-md-2'>
             <img src='${track.image[3]['#text']}' class='pull-right'/>
         </div>
-        <div class='col-md-1'>
+        <div class='col-md-2'>
            <h5>${track.name}</h5>
            <h5>Artist: ${track.artist.name}</h5>
            <h5>(playing...)</h5>
