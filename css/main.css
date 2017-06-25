@@ -13,6 +13,9 @@
 .body-container {
     margin-top: 20px;
 }
+.body{
+    overflow-y: hidden;
+}
 .detail {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
@@ -62,7 +65,6 @@
     overflow-y: auto;
     position: fixed;
     right: 0px;
-    text-size-adjust: 100%;
     top: 0px;
     transition-delay: 0s;
     transition-duration: 0.15s;
@@ -86,10 +88,45 @@
     padding: 1px;
     border-radius: 5px;
 }
+#player img {
+    height: 80px;
+    padding: 3px;
+    width: 80px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px #000;
+    background: #fff;
+}
 .available-covers img{
     height: 157px;
     width: 166px;
 }
 .available-each-poster{
     display: inline-block;
+}
+#player{
+    height: 80px;
+    width: 100%;
+    background: rgba(142, 68, 173,1.0);
+    bottom: 0;
+    position: fixed;
+    box-shadow: 0px 0px 10px #000;
+    transform: linear all 0.5s;
+}
+.hideDiv{
+    display: none;
+}
+#fa-icon-circle{
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.4;
+    cursor: pointer;
+}
+#fa-icon-circle:hover{
+    color: #fff;
+    background: rgba(41, 128, 185,1.0);
 }

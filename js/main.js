@@ -1,8 +1,12 @@
 
 var track = null;
-var apiHost = 'http://ws.audioscrobbler.com/2.0/?';
+var apiHost = 'https://ws.audioscrobbler.com/2.0/?';
 var apiKey = '&api_key=ea50b8271def892cb877d5983fc8ca3a&format=json'
 $(document).ready(function () {
+$('#fa-icon-circle').click(function(){
+    startRecord();
+});
+
   _populateView(apiHost+'method=chart.gettoptracks'+apiKey,
   function(){
 $('#close-overlay').click(function(event){
@@ -16,10 +20,7 @@ var _populateView = function(apiUrl, cb){
         url: apiUrl,
         type: 'GET',
         success: function (response) {
-            console.log(response)
-            debugger;
             if(response && response.tracks != undefined){
-                console.log('if')
                 track = response.tracks.track;
             }
             else{
@@ -36,6 +37,22 @@ var _closeOverlay = function(){
     $('#load-selected-track').html('');
 }
 
+var playTrack = function(track){
+    let content = '';
+    content = `<div class='row' style='color: #fff'>
+    
+     <div class='col-md-2'>
+            <img src='${track.image[3]['#text']}' class='pull-right'/>
+        </div>
+        <div class='col-md-1'>
+           <h5>${track.name}</h5>
+           <h5>Artist: ${track.artist.name}</h5>
+           <h5>(playing...)</h5>
+        </div>
+    </div>`;
+    $('#player').html(content);
+    $('#player').removeClass('hideDiv');
+};
 
 var loadTrack = function(track){
     let content = `<div class="row">
@@ -76,8 +93,14 @@ var availableAlbums = [{
     songUrl: ''
 },];
 content += `<hr /> 
-            <div class='col-md-12' style='color: #fff'>
+<div class='row' style='color: #fff'>
+            <div class='col-md-6'>
                 <h4>Available Covers</h4>
+            </div>
+            <div class='col-md-6'>
+                <button class='btn btn-primary pull-right' data-toggle="modal" data-target="#myModal">
+                <i class="fa fa-cloud" aria-hidden="true"></i> Upload Cover</button>
+            </div>
             </div>
             <div class='row' style='color: #fff;'>`;
 availableAlbums.forEach((track)=>{
@@ -87,7 +110,7 @@ content += `<div class='available-each-poster'>
             <div class='col-md-12'>
                 <div class='available-covers'>
                     <img src='${track.posterUrl}' />
-                    <h4>${track.name}</h4>
+                    <h4>${track.name}</h4> 
                     <h5>Artist: ${track.name}</h5>
                     <h5>Listeners: <span class='badge'>${track.listeners}</span></h5>
                     <h5>Play Count: <span class='badge'>${track.playcount}</span></h5>
@@ -109,6 +132,7 @@ var playSong = function (id) {
     $('body').css('overflow', 'hidden');
     $('#overlay').addClass('hide-body');
     loadTrack(song);
+    playTrack(song);
 }
 var _populateContainer = function () {
     //gallery
@@ -136,14 +160,22 @@ var _populateContainer = function () {
 
 function searchartist(){
     var searchKey=$('#search-artist').val();
-    debugger;
  _populateView(apiHost+`method=track.search&track=${searchKey}`+apiKey,
   function(){
 
 $('#close-overlay').click(function(event){
-        _closeOverlay();
-  
+        _closeOverlay();  
   });
   });   
   
+}
+
+var startRecord = function(){
+    $('#fa-icon-circle').css('color', '#fff').css('background', 'rgba(142, 68, 173,1.0)');
+    $('.record-title').html('Recording...');
+}
+var resetRecord = function(){
+    
+    $('#fa-icon-circle').css('color', '#000').css('background', 'transparent');
+    $('.record-title').html('Record');
 }
