@@ -49,6 +49,11 @@ var playTrack = function(track){
            <h5>Artist: ${track.artist.name}</h5>
            <h5>(playing...)</h5>
         </div>
+        <div class='col-md-6'>
+        <button class='btn btn-success pull-right' style='margin-top: 25px;'
+        onClick = ''
+        ><i class="fa fa-folder-o" aria-hidden="true"></i> Show Covers</button>
+        </div>
     </div>`;
     $('#player').html(content);
     $('#player').removeClass('hideDiv');
