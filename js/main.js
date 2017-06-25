@@ -170,12 +170,23 @@ $('#close-overlay').click(function(event){
   
 }
 
+var recordingStarted = false;
 var startRecord = function(){
-    $('#fa-icon-circle').css('color', '#fff').css('background', 'rgba(142, 68, 173,1.0)');
-    $('.record-title').html('Recording...');
+    if(!recordingStarted){
+        $('#fa-icon-circle').css('color', '#fff').css('background', 'rgba(142, 68, 173,1.0)');
+        $('.record-title').html('Recording...');
+        $('#recording-progress').removeClass('hideDiv');
+        recordingStarted = true;
+    } else{
+        $('#fa-icon-circle').css('color', '#000').css('background', 'transparent');
+        $('.record-title').html('Record');
+        $('#recording-progress').addClass('hideDiv');
+        recordingStarted = false;
+    }
 }
 var resetRecord = function(){
-    
     $('#fa-icon-circle').css('color', '#000').css('background', 'transparent');
     $('.record-title').html('Record');
+    $('#recording-progress').addClass('hideDiv');
+    recordingStarted = false;
 }
