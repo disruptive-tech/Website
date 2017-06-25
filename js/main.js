@@ -1,6 +1,6 @@
 
 var track = null;
-var apiHost = 'http://ws.audioscrobbler.com/2.0/?';
+var apiHost = 'https://ws.audioscrobbler.com/2.0/?';
 var apiKey = '&api_key=ea50b8271def892cb877d5983fc8ca3a&format=json'
 $(document).ready(function () {
   _populateView(apiHost+'method=chart.gettoptracks'+apiKey,
